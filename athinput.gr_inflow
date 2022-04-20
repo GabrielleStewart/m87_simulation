@@ -1,17 +1,17 @@
 <comment>
 problem   = GR hydro accretion in radial direction
-configure = --prob=gr_bondi -g --coord=kerr-schild
+configure = --prob=gr_inflow -g --coord=kerr-schild
 
 <job>
-problem_id = gr_bondi
+problem_id = gr_inflow
 
 <output1>
-file_type = vtk
+file_type = hdf5
 variable  = prim
 dt        = 100.0
 
 <output2>
-file_type = vtk
+file_type = hdf5
 variable  = cons
 dt        = 100.0
 
