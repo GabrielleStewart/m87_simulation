@@ -50,7 +50,6 @@ Real TemperatureResidual(Real t, Real r);
 
 //User defined globals
 Real rho_inflow;
-Real vel_inflow;
 Real pr_inflow;
 
 // Global variables
@@ -98,7 +97,6 @@ void MeshBlock::ProblemGenerator(ParameterInput *pin) {
 
   // Input file parameters
   rho_inflow = pin->GetReal("problem","rho_inflow");
-  vel_inflow = pin->GetReal("problem","vel_inflow");
   pr_inflow  = pin->GetReal("problem","pr_inflow");
 
   // Prepare index bounds
@@ -267,7 +265,7 @@ void FixedOuterBoundary(MeshBlock *pmb, Coordinates *pcoord, AthenaArray<Real> &
         for (int j=jl; j<=ju; ++j) {
             for (int i=1; i<=ngh; ++i) {
                 prim(IDN,k,j,iu+i) = rho_inflow;
-                prim(IM1,k,j,iu+i) = vel_inflow;
+                prim(IM1,k,j,iu+i) = 0.0;
                 prim(IM2,k,j,iu+i) = 0.0;
                 prim(IM3,k,j,iu+i) = 0.0;
                 prim(IPR,k,j,iu+i) = pr_inflow;
