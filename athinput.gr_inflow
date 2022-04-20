@@ -54,5 +54,4 @@ k_adi = 1.0                 # adiabat K, p_gas = K rho^Gamma
 r_crit       = 8.0  # sonic point radius, in units of mass
 bsq_over_rho = 0.0  # value of b^2/rho at inner radius
 rho_inflow   = 1.0  # density inflow at outter boundary
-vel_inflow   = 0.1  # velocity of inflow 
 pr_inflow    = 1.0  # pressure of inflow
